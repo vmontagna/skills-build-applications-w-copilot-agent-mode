@@ -1,184 +1,215 @@
-.counter {
-  font-size: 16px;
-  padding: 5px 10px;
-  border-radius: 5px;
-  color: var(--accent);
-  background: var(--accent-bg);
-  border: 2px solid transparent;
-  transition: border-color 0.3s;
-  margin-bottom: 24px;
-
-  &:hover {
-    border-color: var(--accent-border);
-  }
-  &:focus-visible {
-    outline: 2px solid var(--accent);
-    outline-offset: 2px;
-  }
+.app-shell {
+  min-height: 100vh;
+  background: #f3f7f1;
+  color: #1f2a24;
 }
 
-.hero {
-  position: relative;
-
-  .base,
-  .framework,
-  .vite {
-    inset-inline: 0;
-    margin: 0 auto;
-  }
-
-  .base {
-    width: 170px;
-    position: relative;
-    z-index: 0;
-  }
-
-  .framework,
-  .vite {
-    position: absolute;
-  }
-
-  .framework {
-    z-index: 1;
-    top: 34px;
-    height: 28px;
-    transform: perspective(2000px) rotateZ(300deg) rotateX(44deg) rotateY(39deg)
-      scale(1.4);
-  }
-
-  .vite {
-    z-index: 0;
-    top: 107px;
-    height: 26px;
-    width: auto;
-    transform: perspective(2000px) rotateZ(300deg) rotateX(40deg) rotateY(39deg)
-      scale(0.8);
-  }
-}
-
-#center {
+.app-header {
   display: flex;
-  flex-direction: column;
-  gap: 25px;
-  place-content: center;
-  place-items: center;
-  flex-grow: 1;
-
-  @media (max-width: 1024px) {
-    padding: 32px 20px 24px;
-    gap: 18px;
-  }
+  align-items: end;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 40px clamp(20px, 5vw, 72px) 24px;
+  background: linear-gradient(135deg, #113f32, #356b3f 58%, #d0e29b);
+  color: #ffffff;
 }
 
-#next-steps {
-  display: flex;
-  border-top: 1px solid var(--border);
-  text-align: left;
-
-  & > div {
-    flex: 1 1 0;
-    padding: 32px;
-    @media (max-width: 1024px) {
-      padding: 24px 20px;
-    }
-  }
-
-  .icon {
-    margin-bottom: 16px;
-    width: 22px;
-    height: 22px;
-  }
-
-  @media (max-width: 1024px) {
-    flex-direction: column;
-    text-align: center;
-  }
+.app-header h1 {
+  max-width: 760px;
+  margin: 0;
+  font-size: clamp(2rem, 5vw, 4.5rem);
+  font-weight: 800;
+  line-height: 1;
 }
 
-#docs {
-  border-right: 1px solid var(--border);
-
-  @media (max-width: 1024px) {
-    border-right: none;
-    border-bottom: 1px solid var(--border);
-  }
+.eyebrow {
+  margin: 0 0 8px;
+  color: #86b650;
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0;
+  text-transform: uppercase;
 }
 
-#next-steps ul {
-  list-style: none;
-  padding: 0;
+.api-status {
+  margin: 16px 0 0;
+  color: #e9f3df;
+  overflow-wrap: anywhere;
+}
+
+.app-nav {
   display: flex;
   gap: 8px;
-  margin: 32px 0 0;
-
-  .logo {
-    height: 18px;
-  }
-
-  a {
-    color: var(--text-h);
-    font-size: 16px;
-    border-radius: 6px;
-    background: var(--social-bg);
-    display: flex;
-    padding: 6px 12px;
-    align-items: center;
-    gap: 8px;
-    text-decoration: none;
-    transition: box-shadow 0.3s;
-
-    &:hover {
-      box-shadow: var(--shadow);
-    }
-    .button-icon {
-      height: 18px;
-      width: 18px;
-    }
-  }
-
-  @media (max-width: 1024px) {
-    margin-top: 20px;
-    flex-wrap: wrap;
-    justify-content: center;
-
-    li {
-      flex: 1 1 calc(50% - 8px);
-    }
-
-    a {
-      width: 100%;
-      justify-content: center;
-      box-sizing: border-box;
-    }
-  }
+  padding: 16px clamp(20px, 5vw, 72px);
+  overflow-x: auto;
+  background: #ffffff;
+  border-bottom: 1px solid #dfe8dc;
 }
 
-#spacer {
-  height: 88px;
-  border-top: 1px solid var(--border);
-  @media (max-width: 1024px) {
-    height: 48px;
-  }
+.app-nav a {
+  flex: 0 0 auto;
+  padding: 8px 14px;
+  border-radius: 6px;
+  color: #335344;
+  font-weight: 700;
+  text-decoration: none;
 }
 
-.ticks {
-  position: relative;
-  width: 100%;
+.app-nav a.active,
+.app-nav a:hover {
+  color: #ffffff;
+  background: #2f6840;
+}
 
-  &::before,
-  &::after {
-    content: '';
-    position: absolute;
-    top: -4.5px;
-    border: 5px solid transparent;
+.app-main {
+  padding: 28px clamp(20px, 5vw, 72px) 56px;
+}
+
+.data-panel {
+  max-width: 1120px;
+}
+
+.section-heading {
+  margin-bottom: 20px;
+}
+
+.section-heading h2 {
+  margin: 0;
+  font-size: clamp(1.8rem, 4vw, 3rem);
+  font-weight: 800;
+}
+
+.responsive-table {
+  overflow-x: auto;
+  background: #ffffff;
+  border: 1px solid #dfe8dc;
+  border-radius: 8px;
+}
+
+.table {
+  margin: 0;
+}
+
+.activity-grid,
+.team-grid,
+.workout-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 16px;
+}
+
+.activity-card,
+.team-card,
+.workout-card,
+.leader-list li {
+  background: #ffffff;
+  border: 1px solid #dfe8dc;
+  border-radius: 8px;
+  box-shadow: 0 12px 30px rgb(31 42 36 / 8%);
+}
+
+.activity-card,
+.team-card,
+.workout-card {
+  padding: 20px;
+}
+
+.activity-card h3,
+.team-card h3,
+.workout-card h3 {
+  margin: 0 0 6px;
+  font-size: 1.2rem;
+}
+
+.activity-card p,
+.team-card p,
+.workout-card p {
+  margin: 0;
+  color: #5e6d62;
+}
+
+.activity-card dl {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin: 18px 0 0;
+}
+
+.activity-card dt {
+  color: #68766c;
+  font-size: 0.8rem;
+}
+
+.activity-card dd {
+  margin: 0;
+  font-size: 1.4rem;
+  font-weight: 800;
+}
+
+.team-card span {
+  display: inline-block;
+  margin-bottom: 16px;
+  padding: 6px 10px;
+  border-radius: 6px;
+  color: #173d2e;
+  background: #d9ec9c;
+  font-weight: 800;
+}
+
+.team-card small,
+.workout-card small,
+.leader-list small {
+  display: block;
+  color: #68766c;
+}
+
+.leader-list {
+  display: grid;
+  gap: 12px;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.leader-list li {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 16px;
+  align-items: center;
+  padding: 16px 18px;
+}
+
+.rank {
+  display: inline-grid;
+  min-width: 48px;
+  min-height: 48px;
+  place-items: center;
+  border-radius: 8px;
+  color: #ffffff;
+  background: #2f6840;
+  font-weight: 800;
+}
+
+.workout-card {
+  display: grid;
+  gap: 14px;
+}
+
+.workout-card span {
+  width: max-content;
+  padding: 5px 10px;
+  border-radius: 6px;
+  color: #244835;
+  background: #edf5df;
+  font-weight: 700;
+}
+
+@media (max-width: 720px) {
+  .app-header {
+    display: block;
   }
 
-  &::before {
-    left: 0;
-    border-left-color: var(--border);
-  }
-  &::after {
-    right: 0;
-    border-right-color: var(--border);
+  .leader-list li {
+    grid-template-columns: 1fr;
   }
 }
