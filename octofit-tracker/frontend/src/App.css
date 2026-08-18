@@ -1,0 +1,215 @@
+.app-shell {
+  min-height: 100vh;
+  background: #f3f7f1;
+  color: #1f2a24;
+}
+
+.app-header {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 40px clamp(20px, 5vw, 72px) 24px;
+  background: linear-gradient(135deg, #113f32, #356b3f 58%, #d0e29b);
+  color: #ffffff;
+}
+
+.app-header h1 {
+  max-width: 760px;
+  margin: 0;
+  font-size: clamp(2rem, 5vw, 4.5rem);
+  font-weight: 800;
+  line-height: 1;
+}
+
+.eyebrow {
+  margin: 0 0 8px;
+  color: #86b650;
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+.api-status {
+  margin: 16px 0 0;
+  color: #e9f3df;
+  overflow-wrap: anywhere;
+}
+
+.app-nav {
+  display: flex;
+  gap: 8px;
+  padding: 16px clamp(20px, 5vw, 72px);
+  overflow-x: auto;
+  background: #ffffff;
+  border-bottom: 1px solid #dfe8dc;
+}
+
+.app-nav a {
+  flex: 0 0 auto;
+  padding: 8px 14px;
+  border-radius: 6px;
+  color: #335344;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.app-nav a.active,
+.app-nav a:hover {
+  color: #ffffff;
+  background: #2f6840;
+}
+
+.app-main {
+  padding: 28px clamp(20px, 5vw, 72px) 56px;
+}
+
+.data-panel {
+  max-width: 1120px;
+}
+
+.section-heading {
+  margin-bottom: 20px;
+}
+
+.section-heading h2 {
+  margin: 0;
+  font-size: clamp(1.8rem, 4vw, 3rem);
+  font-weight: 800;
+}
+
+.responsive-table {
+  overflow-x: auto;
+  background: #ffffff;
+  border: 1px solid #dfe8dc;
+  border-radius: 8px;
+}
+
+.table {
+  margin: 0;
+}
+
+.activity-grid,
+.team-grid,
+.workout-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 16px;
+}
+
+.activity-card,
+.team-card,
+.workout-card,
+.leader-list li {
+  background: #ffffff;
+  border: 1px solid #dfe8dc;
+  border-radius: 8px;
+  box-shadow: 0 12px 30px rgb(31 42 36 / 8%);
+}
+
+.activity-card,
+.team-card,
+.workout-card {
+  padding: 20px;
+}
+
+.activity-card h3,
+.team-card h3,
+.workout-card h3 {
+  margin: 0 0 6px;
+  font-size: 1.2rem;
+}
+
+.activity-card p,
+.team-card p,
+.workout-card p {
+  margin: 0;
+  color: #5e6d62;
+}
+
+.activity-card dl {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin: 18px 0 0;
+}
+
+.activity-card dt {
+  color: #68766c;
+  font-size: 0.8rem;
+}
+
+.activity-card dd {
+  margin: 0;
+  font-size: 1.4rem;
+  font-weight: 800;
+}
+
+.team-card span {
+  display: inline-block;
+  margin-bottom: 16px;
+  padding: 6px 10px;
+  border-radius: 6px;
+  color: #173d2e;
+  background: #d9ec9c;
+  font-weight: 800;
+}
+
+.team-card small,
+.workout-card small,
+.leader-list small {
+  display: block;
+  color: #68766c;
+}
+
+.leader-list {
+  display: grid;
+  gap: 12px;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.leader-list li {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 16px;
+  align-items: center;
+  padding: 16px 18px;
+}
+
+.rank {
+  display: inline-grid;
+  min-width: 48px;
+  min-height: 48px;
+  place-items: center;
+  border-radius: 8px;
+  color: #ffffff;
+  background: #2f6840;
+  font-weight: 800;
+}
+
+.workout-card {
+  display: grid;
+  gap: 14px;
+}
+
+.workout-card span {
+  width: max-content;
+  padding: 5px 10px;
+  border-radius: 6px;
+  color: #244835;
+  background: #edf5df;
+  font-weight: 700;
+}
+
+@media (max-width: 720px) {
+  .app-header {
+    display: block;
+  }
+
+  .leader-list li {
+    grid-template-columns: 1fr;
+  }
+}
